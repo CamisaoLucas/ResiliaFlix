@@ -1,14 +1,22 @@
 $('#btn-enviar').click((event)=>{
 event.preventDefault()
-const cepUsuario = parseInt($('#cep-usuario').val())
-console.log(cepUsuario)
-$.ajax({
-    url : `http://viacep.com.br/ws/${cepUsuario}/json/`,
-    'success' : function(result){
-        console.log(result)
-        preencherAuto(result)
-    }
-  })
+})
+
+$('#cep-usuario').on('input' , function(){ //pegar os dados ao colocar
+    $.ajax({
+        url : `http://viacep.com.br/ws/${$('#cep-usuario').val()}/json/`,
+        'success' : function(result){
+            console.log(result)
+            $('#cep-valido').addClass('invisivel')
+            preencherAuto(result)
+        },'error':function(erro){ //validar CEP
+            $('#cep-valido').removeClass('invisivel')
+            $('#bairro').val("")
+            $('#rua').val("")
+            $('#cidade').val("")
+            $('#uf').val("")
+        }
+      })
 })
 
 function preencherAuto(result){

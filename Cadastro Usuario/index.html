@@ -26,22 +26,28 @@
       <form class="row g-3">
         <!--nome-->
           <label for="nome-usuario">Nome: </label>
-          <input type="text" id="nome-usuario" class="form-control" placeholder="primeiro nome">  
+          <input type="text" id="nome-usuario" class="form-control" placeholder="primeiro nome">
+          <p class="nome-valido cor-vermelha invisivel">Nome inválido</p>  
         <!--E-mail-->
         <label>E-mail: </label>
         <input type="text" class="form-control" placeholder="seu email">
+        <p class="email-valido cor-vermelha invisivel">E-mail inválido</p> 
         <!-- <span class="input-group-text" id="basic-addon2">@exemplo.com</span> -->
         <!--Senha-->
         <label>Senha: </label>
         <input type="password" class="form-control">
+        <p class="senha-valido cor-vermelha invisivel">Senha inválido</p>
         <label>Confirmar Senha:</label>
         <input type="password" class="form-control">
+        <p class="senha-mesma-valido cor-vermelha invisivel">Senha inválido - Digite a mesma senha</p>
         <!--RG-->
         <label>RG</label>
         <input type="text" class="form-control">
+        <p class="rg-valido cor-vermelha invisivel">RG inválido</p>
         <!--Parte CEP-->
         <label>CEP</label>
         <input type="text" class="form-control" id="cep-usuario" placeholder="00000000">
+        <p id="cep-valido" class="cep-valido cor-vermelha invisivel">CEP inválido - Obs: Somente Número</p>
         <label>UF: </label>
         <input type="text" class="form-control" id="uf" placeholder="SP">
         <label>cidade: </label>
@@ -58,7 +64,8 @@
         
           <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            <label class="form-check-label" for="exampleCheck1">Aceitar termos de compromisso!</label>
+            <p class="termos-valido invisivel">Você não aceitou os termos de compromisso</p>
           </div>
 
         <button id="btn-enviar" class="btn btn-primary" type="submit">Enviar</button>

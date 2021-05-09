@@ -10,3 +10,10 @@
 #formulario{
     margin: 30px 15% 0 15%;
 }
+.invisivel{
+    display:none;
+    color:red
+}
+.cor-vermelha{
+    color:red;
+}

@@ -21,56 +21,167 @@
     <h1 class="logo-header"><span class="cor-amarelho">RESILIA</span><span class="cor-vermelho">FLIX</span></h1>
   </header>
   <!--Parte Cadastro-->
-  <main>
+  <main id="main-form">
+    <!--Formulário BootsTrap-->
     <section id="formulario">
-      <form class="row g-3">
-        <!--nome-->
-          <label for="nome-usuario">Nome: </label>
-          <input type="text" id="nome-usuario" class="form-control" placeholder="primeiro nome">
-          <p class="nome-valido cor-vermelha invisivel">Nome inválido</p>  
-        <!--E-mail-->
-        <label>E-mail: </label>
-        <input type="text" class="form-control" placeholder="seu email">
-        <p class="email-valido cor-vermelha invisivel">E-mail inválido</p> 
-        <!-- <span class="input-group-text" id="basic-addon2">@exemplo.com</span> -->
-        <!--Senha-->
-        <label>Senha: </label>
-        <input type="password" class="form-control">
-        <p class="senha-valido cor-vermelha invisivel">Senha inválido</p>
-        <label>Confirmar Senha:</label>
-        <input type="password" class="form-control">
-        <p class="senha-mesma-valido cor-vermelha invisivel">Senha inválido - Digite a mesma senha</p>
-        <!--RG-->
-        <label>RG</label>
-        <input type="text" class="form-control">
-        <p class="rg-valido cor-vermelha invisivel">RG inválido</p>
-        <!--Parte CEP-->
-        <label>CEP</label>
-        <input type="text" class="form-control" id="cep-usuario" placeholder="00000000">
-        <p id="cep-valido" class="cep-valido cor-vermelha invisivel">CEP inválido - Obs: Somente Número</p>
-        <label>UF: </label>
-        <input type="text" class="form-control" id="uf" placeholder="SP">
-        <label>cidade: </label>
-        <input type="text" class="form-control" id="cidade" placeholder="São Paulo">
-        <label>Bairro: </label>
-        <input type="text" class="form-control" id="bairro" placeholder="Bairro">
-        <label>Rua: </label>
-        <input tpe="text" class="form-control" id="rua" placeholder="Rua">
-        <label>Número: </label>
-        <input tpe="text" class="form-control" id="numero" placeholder="Número da casa ou ap">
-
-        <label>Complemento: </label>
-        <input tpe="text" class="form-control" placeholder="Complemento">
-        
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Aceitar termos de compromisso!</label>
-            <p class="termos-valido invisivel">Você não aceitou os termos de compromisso</p>
+      <form id="formulario-principal" class="col g-3 needs-validation" novalidate>
+        <h1>Cadastro: </h1>
+        <!--Nome-->
+        <div class="row g-3 needs-validation">
+          <div class="col-md-3">
+            <label for="validationCustom01" class="form-label">Nome: </label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="nome" required>
+            <div class="invalid-feedback">
+              Colocar nome válido
+            </div>
           </div>
+          <!-- Sobre Nome-->
+          <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">Sobrenome: </label>
+            <input type="text" class="form-control" id="validationCustom02" placeholder="sobrenome" required>
+            <div class="invalid-feedback">
+              Colocar um Sobrenome
+            </div>
+          </div>
+        </div>
+        <!--E-mail-->
+        <div class="col-md-5">
+          <label for="validationCustom03" class="form-label">E-mail: </label>
+          <input type="email" class="form-control" id="validationCustom03" placeholder="seuemail@email.com" required>
+          <div class="invalid-feedback">
+            Colocar um e-mail válido.
+          </div>
+        </div>
+        <!--Senha-->
+        <div class="row g-3 needs-validation">
+          <div class="col-md-4 align-items-center">
+            <label for="validationCustom04" class="form-label">Senha: </label>
+            <input type="password" class="form-control" id="validationCustom04" placeholder="********"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required> <!--Regex password-->
+            <div class="col-auto">
+              <span id="passwordHelpInline" class="form-text">
+                Uma letra maiuscula, uma letra minúscula e no mínimo 8 caracteres.
+              </span>
+            </div>
+            <div class="invalid-feedback">
+              Invalida senha.
+            </div>
+          </div>
+          <!--Confirmar senha-->
+          <div class="col-md-4 align-items-center needs-validation">
+            <label for="validationCustom05" class="form-label">Confirmar senha: </label>
+            <input type="password" class="form-control" id="validationCustom05" placeholder="********"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required>
+            <div class="invalid-feedback">
+              Confirmação invalida senha.
+            </div>
+            <div id="senha-mesma-valido" class="invalid-feedback">Confirmação inválido - Digite a
+              mesma senha</div>
+            </div>
+          </div>
+        </div>
+        <!-- RG-->
+        <div class="col-md-3">
+          <label for="validationCustom06" class="form-label">RG: </label>
+          <input type="text" class="form-control" id="validationCustom06" placeholder="00000000" required>
+          <div class="invalid-feedback">
+            RG inválido
+          </div>
+        </div>
+        <!--CEP-->
+        <div class="col-md-2">
+          <label for="validationCustom07" class="form-label">CEP: </label>
+          <input type="text" class="form-control" id="validationCustom07" placeholder="00000-000" required>
+          <div class="invalid-feedback">
+            CEP inválido
+          </div>
+          <p id="cep-valido" class="cep-valido cor-vermelha invisivel">CEP não encontrado</p>
+        </div>
+        <!--Cidade-->
+      <div class="row g-3 needs-validation">
+        <div class="col-md-2">
+          <label for="validationCustom06" class="form-label">Cidade: </label>
+          <input type="text" class="form-control" id="validationCustom08" placeholder="São Paulo" required>
+          <div class="invalid-feedback">
+          Cidade inválida
+          </div>
+        </div>
+         <!--UF-->
+         <div class="col-md-2">
+          <label for="validationCustom06" class="form-label">UF: </label>
+          <input type="text" class="form-control" id="validationCustom09" placeholder="SP" required>
+          <div class="invalid-feedback">
+          UF inválido
+          </div>
+        </div>
+      </div>
+        <!--Bairro-->
+        <div class="col-md-4">
+          <label for="validationCustom06" class="form-label">Bairro: </label>
+          <input type="text" class="form-control" id="validationCustom10" placeholder="Bairro" required>
+          <div class="invalid-feedback">
+          Bairro inválido
+          </div>
+        </div>
+        <!--Rua-->
+      <div class="row g-3 needs-validation">
+        <div class="col-md-5">
+          <label for="validationCustom06" class="form-label">Endereço: </label>
+          <input type="text" class="form-control" id="validationCustom11" placeholder="Endereço" required>
+          <div class="invalid-feedback">
+          Endereço inválida
+          </div>
+        </div>
+        <!--Numero-->
+        <div class="col-md-2">
+          <label for="validationCustom06" class="form-label">Numero: </label>
+          <input type="text" class="form-control" id="validationCustom12" placeholder="0000" required>
+          <div class="invalid-feedback">
+          Número inválido
+          </div>
+        </div>
+        <!--Complemento-->
+        <!--Tem complemento?-->
+        <div class="col-md-2">
+          <label for="validationCustom13" class="form-label">Tem complemento?</label>
+          <select class="form-select" id="validationCustom13" required>
+            <option selected disabled value="">...</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+          </select>
+          <div class="invalid-feedback">
+            Favor selecione uma das opções
+          </div>
+        </div>
+        <!--Sim-->
+        <div id="reposta-change" class="col-md-2 invisivel-complemento">
+          <label for="validationCustom14" class="form-label">Complemento: </label>
+          <input type="text" class="form-control" id="validationCustom14" placeholder="0000">
+          <div class="invalid-feedback">
+          Complemento inválido
+          </div>
+        </div>
+      </div>
 
-        <button id="btn-enviar" class="btn btn-primary" type="submit">Enviar</button>
+        <!--Termos de compromissos-->
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+              Aceitar termos de compromisso.
+            </label>
+            <div class="invalid-feedback">
+              *Você precisa aceitar os termos de compromisso.
+            </div>
+          </div>
+        </div>
+        <!--Botão Submit-->
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button class="btn btn-outline-primary" type="submit">Submit form</button>
+        </div>
       </form>
-  </section>
+    </section>
+    <!--Fim do formulário BootStrap-->
   </main>
 
 

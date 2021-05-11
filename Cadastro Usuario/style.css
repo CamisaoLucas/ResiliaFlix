@@ -9,6 +9,12 @@
 }
 #formulario{
     margin: 30px 15% 0 15%;
+    border-bottom: 3px solid rgb(240, 243, 33);
+    border-right: 3px solid rgb(230, 255, 6);
+    border-left: 3px solid rgb(243, 37, 37);
+    border-top: 3px solid rgb(255, 12, 12);
+    padding: 10px;
+    border-radius: 30px;
 }
 .invisivel{
     display:none;
@@ -16,4 +22,10 @@
 }
 .cor-vermelha{
     color:red;
+}
+.invisivel-complemento{
+    display: none;
+}
+#senha-mesma-valido{
+    color: red; 
 }

@@ -8,37 +8,35 @@ let forms = document.querySelectorAll('.needs-validation')
       if (!form.checkValidity()) {
         event.preventDefault()
         event.stopPropagation()
-        confirmaSenhaValida()
       } else {
         validaSubmit()
       }
+      confirmaSenhaValida()
       form.classList.add('was-validated')
     })
   })
-
 //Confirmação de senha:
+let validacao05 = document.querySelector('#validationCustom05') //pegar o input "confirmação de senha"
 function confirmaSenhaValida() {
-  $('#validationCustom05').on('input', function () {
-    if ($('#validationCustom04').val() != $('#validationCustom05').val()) {
-      $('#senha-mesma-valido').removeClass('invalid-feedback')
-      $('#formulario-preencher').removeClass('was-validation')
+  $('#validationCustom05').on('input', function () { //validationCustom04 - senha .. validationCustom05 - Confirmacao de senha
+    if ($('#validationCustom04').val() == $('#validationCustom05').val()) {
+      validacao05.setCustomValidity('') //é valido
     } else {
-      $('#senha-mesma-valido').addClass('invalid-feedback')
-      $('#formulario-preencher').addClass('was-validated')
+      validacao05.setCustomValidity('Não é valido') //não é valido
     }
   })
 }
 
 //--------------------------validar CEP---------------------------------------
 $('#validationCustom07').on('input', function () { //pegar os dados ao colocar
+  let validacaoCep = document.querySelector('#validationCustom07')
   $.ajax({
     url: `http://viacep.com.br/ws/${$('#validationCustom07').val()}/json/`,
     'success': function (result) {
-      console.log(result)
-      $('#cep-valido').addClass('invisivel')
+      validacaoCep.setCustomValidity('') //Valida CEP
       preencherAuto(result)
     }, 'error': function (erro) { //validar CEP
-      $('#cep-valido').removeClass('invisivel')
+      validacaoCep.setCustomValidity('CEP invalido') //Cep invalido
       $('#validationCustom10').val("") //Bairro
       $('#validationCustom11').val("") //endereço
       $('#validationCustom08').val("")//Cidade

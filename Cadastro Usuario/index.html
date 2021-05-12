@@ -57,7 +57,8 @@
           <div class="col-md-4 align-items-center">
             <label for="validationCustom04" class="form-label">Senha: </label>
             <input type="password" class="form-control" id="validationCustom04" placeholder="********"
-              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required> <!--Regex password-->
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required>
+            <!--Regex password-->
             <div class="col-auto">
               <span id="passwordHelpInline" class="form-text">
                 Uma letra maiuscula, uma letra minúscula e no mínimo 8 caracteres.
@@ -68,15 +69,13 @@
             </div>
           </div>
           <!--Confirmar senha-->
-          <div class="col-md-4 align-items-center needs-validation">
+          <div class="col-md-4 align-items-center">
+            <!-- is-invalid =  invalid -->
+            <!-- is-valid =  valida-->
             <label for="validationCustom05" class="form-label">Confirmar senha: </label>
-            <input type="password" class="form-control" id="validationCustom05" placeholder="********"
-              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required>
+            <input type="password" class="form-control" id="validationCustom05" placeholder="********" required>
             <div class="invalid-feedback">
-              Confirmação invalida senha.
-            </div>
-            <div id="senha-mesma-valido" class="invalid-feedback">Confirmação inválido - Digite a
-              mesma senha</div>
+              Confirmação invalida
             </div>
           </div>
         </div>
@@ -95,73 +94,72 @@
           <div class="invalid-feedback">
             CEP inválido
           </div>
-          <p id="cep-valido" class="cep-valido cor-vermelha invisivel">CEP não encontrado</p>
         </div>
         <!--Cidade-->
-      <div class="row g-3 needs-validation">
-        <div class="col-md-2">
-          <label for="validationCustom06" class="form-label">Cidade: </label>
-          <input type="text" class="form-control" id="validationCustom08" placeholder="São Paulo" required>
-          <div class="invalid-feedback">
-          Cidade inválida
+        <div class="row g-3 needs-validation">
+          <div class="col-md-2">
+            <label for="validationCustom06" class="form-label">Cidade: </label>
+            <input type="text" class="form-control" id="validationCustom08" placeholder="São Paulo" required>
+            <div class="invalid-feedback">
+              Cidade inválida
+            </div>
+          </div>
+          <!--UF-->
+          <div class="col-md-2">
+            <label for="validationCustom06" class="form-label">UF: </label>
+            <input type="text" class="form-control" id="validationCustom09" placeholder="SP" required>
+            <div class="invalid-feedback">
+              UF inválido
+            </div>
           </div>
         </div>
-         <!--UF-->
-         <div class="col-md-2">
-          <label for="validationCustom06" class="form-label">UF: </label>
-          <input type="text" class="form-control" id="validationCustom09" placeholder="SP" required>
-          <div class="invalid-feedback">
-          UF inválido
-          </div>
-        </div>
-      </div>
         <!--Bairro-->
         <div class="col-md-4">
           <label for="validationCustom06" class="form-label">Bairro: </label>
           <input type="text" class="form-control" id="validationCustom10" placeholder="Bairro" required>
           <div class="invalid-feedback">
-          Bairro inválido
+            Bairro inválido
           </div>
         </div>
         <!--Rua-->
-      <div class="row g-3 needs-validation">
-        <div class="col-md-5">
-          <label for="validationCustom06" class="form-label">Endereço: </label>
-          <input type="text" class="form-control" id="validationCustom11" placeholder="Endereço" required>
-          <div class="invalid-feedback">
-          Endereço inválida
+        <div class="row g-3 needs-validation">
+          <div class="col-md-5">
+            <label for="validationCustom06" class="form-label">Endereço: </label>
+            <input type="text" class="form-control" id="validationCustom11" placeholder="Endereço" required>
+            <div class="invalid-feedback">
+              Endereço inválida
+            </div>
+          </div>
+          <!--Numero-->
+          <div class="col-md-2">
+            <label for="validationCustom06" class="form-label">Numero: </label>
+            <input type="text" class="form-control" id="validationCustom12" placeholder="0000" required>
+            <div class="invalid-feedback">
+              Número inválido
+            </div>
+          </div>
+          <!--Complemento-->
+          <!--Tem complemento?-->
+          <div class="col-md-2">
+            <label for="validationCustom13" class="form-label">Tem complemento?</label>
+            <select class="form-select" id="validationCustom13" required>
+              <option selected disabled value="">...</option>
+              <option value="sim">Sim</option>
+              <option value="nao">Não</option>
+            </select>
+            <div class="invalid-feedback">
+              Favor selecione uma das opções
+            </div>
+          </div>
+          <!--Sim-->
+          <div id="reposta-change" class="col-md-2 invisivel-complemento">
+            <label for="validationCustom14" class="form-label">Complemento: </label>
+            <input type="text" class="form-control" id="validationCustom14" placeholder="0000">
+            <div class="invalid-feedback">
+              Complemento inválido
+            </div>
           </div>
         </div>
-        <!--Numero-->
-        <div class="col-md-2">
-          <label for="validationCustom06" class="form-label">Numero: </label>
-          <input type="text" class="form-control" id="validationCustom12" placeholder="0000" required>
-          <div class="invalid-feedback">
-          Número inválido
-          </div>
-        </div>
-        <!--Complemento-->
-        <!--Tem complemento?-->
-        <div class="col-md-2">
-          <label for="validationCustom13" class="form-label">Tem complemento?</label>
-          <select class="form-select" id="validationCustom13" required>
-            <option selected disabled value="">...</option>
-            <option value="sim">Sim</option>
-            <option value="nao">Não</option>
-          </select>
-          <div class="invalid-feedback">
-            Favor selecione uma das opções
-          </div>
-        </div>
-        <!--Sim-->
-        <div id="reposta-change" class="col-md-2 invisivel-complemento">
-          <label for="validationCustom14" class="form-label">Complemento: </label>
-          <input type="text" class="form-control" id="validationCustom14" placeholder="0000">
-          <div class="invalid-feedback">
-          Complemento inválido
-          </div>
-        </div>
-      </div>
 
         <!--Termos de compromissos-->
         <div class="col-12">
@@ -171,7 +169,7 @@
               Aceitar termos de compromisso.
             </label>
             <div class="invalid-feedback">
-              *Você precisa aceitar os termos de compromisso.
+              Você precisa aceitar os termos de compromisso.
             </div>
           </div>
         </div>

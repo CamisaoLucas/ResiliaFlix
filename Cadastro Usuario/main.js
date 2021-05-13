@@ -1,7 +1,6 @@
 //--------------BootStrap---------------
 //Busque todos os formulários aos quais queremos aplicar estilos de validação de Bootstrap personalizados
 let forms = document.querySelectorAll('.needs-validation')
-
 // Passe por cima deles e evite o envio
   .forEach(function (form) {
     form.addEventListener('submit', function (event) {
@@ -9,7 +8,9 @@ let forms = document.querySelectorAll('.needs-validation')
         event.preventDefault()
         event.stopPropagation()
       } else {
-        validaSubmit()
+        event.preventDefault()
+        const cadastroFinalizado = enviarFinalizacao() // pegar os dados
+        validaSubmit(cadastroFinalizado)
       }
       confirmaSenhaValida()
       form.classList.add('was-validated')
@@ -61,16 +62,48 @@ $('#validationCustom13').change(function(){
   }
 })
 
-//Se tudo estiver Ok!
-function validaSubmit() {
-  $('body').html('<h1>Cadastro feito com sucesso!</h1>')
+//Class Cadastro- Criar cadastro apartir das informações do usuário
+class Cadastro {
+  constructor(nome,sobreNome, email, senha, rg, cep, estado, cidade, bairro, rua, numeroRua, complementoRua) {
+    this._nome = `${nome} ${sobreNome}`;
+    this._email = email;
+    this._senha = senha;
+    this._rg = rg;
+    this._cep = cep;
+    this._estado = estado;
+    this._cidade = cidade;
+    this._bairro = bairro;
+    this._rua = rua;
+    this._numeroRua = numeroRua;
+    this._complementoRua = complementoRua;
+  }
+}
+function enviarFinalizacao(cadastroFinalizado){
+    cadastroFinalizado = new Cadastro(
+      $('#validationCustom01').val(), //nome
+      $('#validationCustom02').val(), //sobreNome
+      $('#validationCustom03').val(), //email
+      $('#validationCustom04').val(), //senha
+      $('#validationCustom06').val(), //rg
+      $('#validationCustom07').val(), //cep
+      $('#validationCustom08').val(), //cidade
+      $('#validationCustom09').val(), //estado
+      $('#validationCustom10').val(), //bairro
+      $('#validationCustom11').val(), //endereço
+      $('#validationCustom12').val(), //numero
+      $('#validationCustom14').val()
+    )
+    return cadastroFinalizado
 }
 
-//Class Cadastro-
-function classCadastro() {
-  class Cadastro {
-    constructor() {
-
-    }
-  }
+//Se tudo estiver Ok!
+function validaSubmit(cadastroFinalizado) {
+  $('#main-form').css('display','none')
+  $('#cadastro-concluido').css('opacity','1')
+  $('#cadastro-concluido').html(`<h1>Cadastro feito com sucesso!</h1>
+  <h2>Olá ${cadastroFinalizado._nome}! Bem vindo(a) ao 
+  <span class="cor-amarelho">RESILIA</span><span class="cor-vermelho">FLIX</span></h2>,
+  <h2>Verifique seu e-mail (${cadastroFinalizado._email}) para receber as informações e confirmação 
+  de cadastro.</h2>
+  `)
 }

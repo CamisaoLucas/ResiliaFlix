@@ -9,11 +9,11 @@
     href="https://static.wixstatic.com/media/1661f2_20f3c7c836e3496085d166830aa3df53%7Emv2.png/v1/fill/w_32%2Ch_32%2Clg_1%2Cusm_0.66_1.00_0.01/1661f2_20f3c7c836e3496085d166830aa3df53%7Emv2.png"
     type="image/png">
   <title>Cadastro Usuário</title>
-  <!-- My CSS-->
-  <link rel="stylesheet" href="style.css">
   <!--BootStrap-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <!-- My CSS-->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -58,7 +58,7 @@
             <label for="validationCustom04" class="form-label">Senha: </label>
             <input type="password" class="form-control" id="validationCustom04" placeholder="********"
               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required>
-            <!--Regex password-->
+            <!--Regex password = pattern-->
             <div class="col-auto">
               <span id="passwordHelpInline" class="form-text">
                 Uma letra maiuscula, uma letra minúscula e no mínimo 8 caracteres.
@@ -70,8 +70,6 @@
           </div>
           <!--Confirmar senha-->
           <div class="col-md-4 align-items-center">
-            <!-- is-invalid =  invalid -->
-            <!-- is-valid =  valida-->
             <label for="validationCustom05" class="form-label">Confirmar senha: </label>
             <input type="password" class="form-control" id="validationCustom05" placeholder="********" required>
             <div class="invalid-feedback">
@@ -106,7 +104,7 @@
           </div>
           <!--UF-->
           <div class="col-md-2">
-            <label for="validationCustom06" class="form-label">UF: </label>
+            <label for="validationCustom06" class="form-label">Estado: </label>
             <input type="text" class="form-control" id="validationCustom09" placeholder="SP" required>
             <div class="invalid-feedback">
               UF inválido
@@ -175,12 +173,13 @@
         </div>
         <!--Botão Submit-->
         <div class="d-grid gap-2 col-6 mx-auto">
-          <button class="btn btn-outline-primary" type="submit">Submit form</button>
+          <button id="btn-enviar" class="btn btn-outline-primary" type="submit">Enviar</button>
         </div>
       </form>
     </section>
     <!--Fim do formulário BootStrap-->
   </main>
+  <div id="cadastro-concluido"></div>
 
 
   <!--BootStrap-->

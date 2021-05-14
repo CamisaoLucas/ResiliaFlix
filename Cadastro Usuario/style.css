@@ -1,0 +1,47 @@
+.cor-amarelho{
+    color:rgb(233, 233, 39);
+}
+.cor-vermelho{
+    color:red;
+}
+.logo-header{
+    background: rgb(14, 13, 13);
+}
+#main-form{
+    margin: 30px 15% 0 15%;
+    border-bottom: 3px solid rgb(240, 243, 33);
+    border-right: 3px solid rgb(230, 255, 6);
+    border-left: 3px solid rgb(243, 37, 37);
+    border-top: 3px solid rgb(255, 12, 12);
+    padding: 10px;
+    border-radius: 30px;
+}
+.invisivel{
+    display:none;
+    color:red
+}
+.cor-vermelha{
+    color:red;
+}
+.invisivel-complemento{
+    display: none;
+}
+#senha-mesma-valido{
+    color: red; 
+}
+/*Remover Setas do type="number"  (-moz-appearance) - é utilizada para exibir um elemento usando o estilo nativo da plataforma com base no tema do sistema operacional.
+#validationCustom06::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+*/
+/*Cadastro Concluido*/
+#cadastro-concluido{
+    margin: 30px 15% 0 15%;
+    border-bottom: 3px solid rgb(240, 243, 33);
+    border-right: 3px solid rgb(230, 255, 6);
+    border-left: 3px solid rgb(243, 37, 37);
+    border-top: 3px solid rgb(255, 12, 12);
+    padding: 10px;
+    border-radius: 30px;
+    opacity: 0;
+}

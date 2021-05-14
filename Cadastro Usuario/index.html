@@ -71,7 +71,7 @@
           <!--Confirmar senha-->
           <div class="col-md-4 align-items-center">
             <label for="validationCustom05" class="form-label">Confirmar senha: </label>
-            <input type="password" class="form-control" id="validationCustom05" placeholder="********" required>
+            <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" class="form-control" id="validationCustom05" placeholder="********" required>
             <div class="invalid-feedback">
               Confirmação invalida
             </div>
@@ -193,6 +193,9 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <!--My JSS-->
+  <script src="./MVC/models.js"></script>
+  <script src="./MVC/controller.js"></script>
+  <script src="./MVC/view.js"></script>
   <script src="main.js"></script>
 </body>
 

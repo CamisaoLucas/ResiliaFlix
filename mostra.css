@@ -1,0 +1,41 @@
+*{
+    margin:0; padding: 0;  box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+.container{
+    padding: 2%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+}
+ nav a {
+    text-decoration: none;
+    color: #AAA;
+    margin-right: 10px;
+}
+ nav a:hover{
+    color:#fff;
+}
+.logo{
+    color: rgb(102, 7, 190);
+    margin-left: 8%;
+}
+span{
+    color: cornsilk;
+}
+#principal{
+    
+    display: grid;
+    place-items: center;
+    overflow-x: auto;
+    
+}
+#principal{
+    width: 100vm;
+}
+#principal{
+    display: flex;
+}

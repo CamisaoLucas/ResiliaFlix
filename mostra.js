@@ -20,7 +20,7 @@ for (let i = 0; i < arrId.length; i++) {
              //exibir img 
             document.querySelector('#principal').innerHTML += `<img src="${resultado.Poster}"> `
     
-    
+          
         }
     
     })

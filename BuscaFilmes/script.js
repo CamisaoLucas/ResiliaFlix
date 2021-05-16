@@ -20,7 +20,7 @@ $('.btn').click(function(event){
             //requisiçao de todas(FULL) as informações de cada filme.
             "url" : `http://www.omdbapi.com/?apikey=708a483d&t=${recebe[i].Title}&plot=full`,
             "success" : (req)=>{
-                filmes.pegaPlot(req.Plot)
+                filmes.pegaInfo(req.Plot)
             },
             'error':function(erro){
             }
@@ -55,15 +55,15 @@ class Filmes{
         setTimeout(() => {
             
              $(`#posicao-filmes`).append(`
-            <h1>${this.nome}</h1>
+           <div class="filmes"><h1>${this.nome}</h1>
             <img src = ${this.img}>
             <p>${this.descricao}</p>
-            <p>${this.genero}</p>`) 
+            <p>${this.ano}</p></div>`) 
           
         }, 500);              
     }
 
-    pegaPlot(requesicao){
+    pegaInfo(requesicao){
         this.descricao = requesicao
     } 
 }

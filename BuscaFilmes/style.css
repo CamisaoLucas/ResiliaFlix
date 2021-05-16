@@ -23,6 +23,22 @@
 
 .pesquisa-filmes{
     margin-top: 2%;
+    display: inline-block;
+}
+
+#posicao-filmes{
+    margin-top: 2%;
+    margin-bottom: 5%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.filmes{
+    width: 30%;
+    text-align: center;
+    padding-bottom: 5%;
 }
 
 .copyright{

@@ -12,14 +12,28 @@
   <!--BootStrap-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <!-- My CSS-->
+  <!-- My CSS-->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./MVC/view/style-forms.css">
 </head>
 
 <body>
-  <header>
-    <h1 class="logo-header"><span class="cor-amarelho">RESILIA</span><span class="cor-vermelho">FLIX</span></h1>
-  </header>
+  <nav class="navbar navbar-expand-lg navbar-light navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index-header.html"><span id="resilia">Resilia</span><span id="flix">Flix</span></a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link text-light entrar" href="../Login e Recuperar senha/login.html">Entrar</a>
+          <a class="nav-link text-light cadastro" id="cadastro" href="./index.html">Cadastrar</a>
+        </div>
+      </div>
+    </div>
+  </nav>
   <!--Parte Cadastro-->
   <main id="main-form">
     <!--Formulário BootsTrap-->
@@ -71,7 +85,8 @@
           <!--Confirmar senha-->
           <div class="col-md-4 align-items-center">
             <label for="validationCustom05" class="form-label">Confirmar senha: </label>
-            <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" class="form-control" id="validationCustom05" placeholder="********" required>
+            <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" class="form-control"
+              id="validationCustom05" placeholder="********" required>
             <div class="invalid-feedback">
               Confirmação invalida
             </div>
@@ -193,9 +208,9 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <!--My JSS-->
-  <script src="./MVC/models.js"></script>
+  <script src="./MVC/view/view.js"></script>
   <script src="./MVC/controller.js"></script>
-  <script src="./MVC/view.js"></script>
+  <script src="./MVC/models.js"></script>
   <script src="main.js"></script>
 </body>
 

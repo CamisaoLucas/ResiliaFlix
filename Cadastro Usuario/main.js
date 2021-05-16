@@ -9,7 +9,7 @@ let forms = document.querySelectorAll('.needs-validation')
         event.stopPropagation()
       } else {
         event.preventDefault()
-        cadastroFinalizado.addConstroler()
+        cadastroFinalizado.addConstroler() //pegar os dados
       }
       confirmaSenhaValida()
       form.classList.add('was-validated')
@@ -61,4 +61,4 @@ $('#validationCustom13').change(function(){
   }
 })
 
-const cadastroFinalizado = new ConstrollerAdd(); // pegar os dados.
+const cadastroFinalizado = new ConstrollerAdd; //criar "ativar a class Constroller"

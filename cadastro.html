@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="style-forms.css">
+    <title>Cadastro - ResiliaFlix</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index-header.html"><span id="resilia">Resilia</span><span id="flix">Flix</span></a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link text-light entrar" href="/login.html">Entrar</a>
+                    <a class="nav-link text-light cadastro" id="cadastro" href="#">Cadastrar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--Parte Cadastro-->
+    <main id="main-form">
+        <!--Formulário BootsTrap-->
+        <section id="formulario">
+            <form id="formulario-principal" class="col g-3 needs-validation" novalidate>
+                <h1 class="titulo-form-cadastro">Cadastro de usuário</h1>
+                <!--Nome-->
+                <div class="row g-3 needs-validation">
+                    <div class="nome-sobrenome">
+                        <div class="col-md-3">
+                            <label for="validationCustom01" class="form-label">Nome: </label>
+                            <input type="text" class="form-control campo-nome" id="validationCustom01" placeholder="nome" required>
+                            <div class="invalid-feedback">
+                                Colocar nome válido
+                            </div>
+                        </div>
+                        <!-- Sobre Nome-->
+                        <div class="col-md-4">
+                            <label for="validationCustom02" class="form-label">Sobrenome: </label>
+                            <input type="text" class="form-control" id="validationCustom02" placeholder="sobrenome"
+                                required>
+                            <div class="invalid-feedback">
+                                Colocar um Sobrenome
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--E-mail-->
+                <div class="col-md-5">
+                    <label for="validationCustom03" class="form-label">E-mail: </label>
+                    <input type="email" class="form-control" id="validationCustom03" placeholder="seuemail@email.com"
+                        required>
+                    <div class="invalid-feedback">
+                        Colocar um e-mail válido.
+                    </div>
+                </div>
+                <!--Senha-->
+                <div class="row g-3 needs-validation">
+                    <div class="col-md-4 align-items-center">
+                        <label for="validationCustom04" class="form-label">Senha: </label>
+                        <input type="password" class="form-control" id="validationCustom04" placeholder="********"
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required>
+                        <!--Regex password = pattern-->
+                        <div class="col-auto">
+                            <span id="passwordHelpInline" class="form-text">
+                                Uma letra maiuscula, uma letra minúscula e no mínimo 8 caracteres.
+                            </span>
+                        </div>
+                        <div class="invalid-feedback">
+                            Invalida senha.
+                        </div>
+                    </div>
+                    <!--Confirmar senha-->
+                    <div class="col-md-4 align-items-center">
+                        <label for="validationCustom05" class="form-label">Confirmar senha: </label>
+                        <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+                            class="form-control" id="validationCustom05" placeholder="********" required>
+                        <div class="invalid-feedback">
+                            Confirmação invalida
+                        </div>
+                    </div>
+                </div>
+                <!-- RG-->
+                <div class="col-md-3">
+                    <label for="validationCustom06" class="form-label">RG: </label>
+                    <input type="text" class="form-control" id="validationCustom06" placeholder="00000000" required>
+                    <div class="invalid-feedback">
+                        RG inválido
+                    </div>
+                </div>
+                <!--CEP-->
+                <div class="col-md-2">
+                    <label for="validationCustom07" class="form-label">CEP: </label>
+                    <input type="text" class="form-control" id="validationCustom07" placeholder="00000-000" required>
+                    <div class="invalid-feedback">
+                        CEP inválido
+                    </div>
+                </div>
+                <!--Cidade-->
+                <div class="row g-3 needs-validation">
+                    <div class="col-md-2">
+                        <label for="validationCustom06" class="form-label">Cidade: </label>
+                        <input type="text" class="form-control" id="validationCustom08" placeholder="São Paulo"
+                            required>
+                        <div class="invalid-feedback">
+                            Cidade inválida
+                        </div>
+                    </div>
+                    <!--UF-->
+                    <div class="col-md-2">
+                        <label for="validationCustom06" class="form-label">Estado: </label>
+                        <input type="text" class="form-control" id="validationCustom09" placeholder="SP" required>
+                        <div class="invalid-feedback">
+                            UF inválido
+                        </div>
+                    </div>
+                </div>
+                <!--Bairro-->
+                <div class="col-md-4">
+                    <label for="validationCustom06" class="form-label">Bairro: </label>
+                    <input type="text" class="form-control" id="validationCustom10" placeholder="Bairro" required>
+                    <div class="invalid-feedback">
+                        Bairro inválido
+                    </div>
+                </div>
+                <!--Rua-->
+                <div class="row g-3 needs-validation">
+                    <div class="col-md-5">
+                        <label for="validationCustom06" class="form-label">Endereço: </label>
+                        <input type="text" class="form-control" id="validationCustom11" placeholder="Endereço" required>
+                        <div class="invalid-feedback">
+                            Endereço inválida
+                        </div>
+                    </div>
+                    <!--Numero-->
+                    <div class="col-md-2">
+                        <label for="validationCustom06" class="form-label">Numero: </label>
+                        <input type="text" class="form-control" id="validationCustom12" placeholder="0000" required>
+                        <div class="invalid-feedback">
+                            Número inválido
+                        </div>
+                    </div>
+                    <!--Complemento-->
+                    <!--Tem complemento?-->
+                    <div class="col-md-2">
+                        <label for="validationCustom13" class="form-label">Tem complemento?</label>
+                        <select class="form-select" id="validationCustom13" required>
+                            <option selected disabled value="">...</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Favor selecione uma das opções
+                        </div>
+                    </div>
+                    <!--Sim-->
+                    <div id="reposta-change" class="col-md-2 invisivel-complemento">
+                        <label for="validationCustom14" class="form-label">Complemento: </label>
+                        <input type="text" class="form-control" id="validationCustom14" placeholder="0000">
+                        <div class="invalid-feedback">
+                            Complemento inválido
+                        </div>
+                    </div>
+                </div>
+
+                <!--Termos de compromissos-->
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                            Aceitar termos de compromisso.
+                        </label>
+                        <div class="invalid-feedback">
+                            Você precisa aceitar os termos de compromisso.
+                        </div>
+                    </div>
+                </div>
+                <!--Botão Submit-->
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button id="btn-enviar" class="btn btn-outline-primary" type="submit">Enviar</button>
+                </div>
+            </form>
+        </section>
+        <!--Fim do formulário BootStrap-->
+    </main>
+    <div id="cadastro-concluido"></div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
+    </script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

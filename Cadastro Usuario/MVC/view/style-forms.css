@@ -1,12 +1,22 @@
 body {
-    background: url(https://www.journaldugeek.com/content/uploads/2018/10/netflix-1-780x439.jpeg);
+    background: url(../../imgCadastro/img-background.jpg) center fixed no-repeat;
     color: #E1E1E6;
+    background-size: cover;
 }
 body #main-form{
     background: #121214;
 }
 body #cadastro-concluido{
     background: #121214;
+}
+#main-form{
+    margin: 30px 15% 0 15%;
+    border-bottom: 3px solid #E1E1E6;
+    border-right: 3px solid #E1E1E6;
+    border-left: 3px solid #5106c9;
+    border-top: 3px solid #5106c9;
+    padding: 10px;
+    border-radius: 30px;
 }
 .navbar {
     background-color: #000;
@@ -137,4 +147,37 @@ body #cadastro-concluido{
 
 .campo-nome {
     margin-right: 200px;
+}
+
+
+/*-Parte Cadastro-*/
+
+.invisivel{
+    display:none;
+    color:red
+}
+.cor-vermelha{
+    color:red;
+}
+.invisivel-complemento{
+    display: none;
+}
+#senha-mesma-valido{
+    color: red; 
+}
+/*Remover Setas do type="number"  (-moz-appearance) - é utilizada para exibir um elemento usando o estilo nativo da plataforma com base no tema do sistema operacional.
+#validationCustom06::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+*/
+/*Cadastro Concluido*/
+#cadastro-concluido{
+    margin: 30px 15% 0 15%;
+    border-bottom: 3px solid #E1E1E6;
+    border-right: 3px solid #E1E1E6;
+    border-left: 3px solid #5106c9;
+    border-top: 3px solid #5106c9;
+    padding: 10px;
+    border-radius: 30px;
+    opacity: 0;
 }

@@ -18,7 +18,8 @@ for (let i = 0; i < arrId.length; i++) {
         success: function (resultado) {
            // console.log(resultado.Actors)
              //exibir img 
-            document.querySelector('#principal').innerHTML += `<img src="${resultado.Poster}"> `
+            document.querySelector('#principal').innerHTML +=
+                `<a href="./BuscaFilmes/buscaFilmes.html?id=${arrId[i]}"><img src="${resultado.Poster}"></a> `
     
           
         }

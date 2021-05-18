@@ -62,3 +62,13 @@ $('#validationCustom13').change(function(){
 })
 
 const cadastroFinalizado = new ConstrollerAdd; //criar "ativar a class Constroller"
+
+//Valida RG - com 8 caracteres
+let valida06 = document.querySelector('#validationCustom06')
+$('#validationCustom06').on('input',()=>{
+  if ($('#validationCustom06').val().length == 8) {
+    valida06.setCustomValidity('') //é valido
+  } else {
+    valida06.setCustomValidity('Não é valido') //não é valido
+  }
+})

@@ -180,4 +180,8 @@ body #cadastro-concluido{
     padding: 10px;
     border-radius: 30px;
     opacity: 0;
+    text-align: center;
+}
+.img-obrigado{
+    border-radius: 10%;
 }

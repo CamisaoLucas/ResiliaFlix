@@ -1,8 +1,24 @@
 body {
-    background-color: #121214;
+    background: url(../../imgCadastro/img-background.jpg) center fixed no-repeat;
     color: #E1E1E6;
+    background-size: cover;
 }
-
+body #main-contato{
+    background: #121214;
+}
+body #cadastro-concluido{
+    background: #121214;
+}
+#main-contato{
+    margin: 30px 10% 0px 10%;
+    border-bottom: 3px solid #E1E1E6;
+    border-right: 3px solid #E1E1E6;
+    border-left: 3px solid #5106c9;
+    border-top: 3px solid #5106c9;
+    padding: 10px;
+    border-radius: 30px;
+    padding-bottom: 50px;
+}
 .navbar {
     background-color: #000;
     height: 80px;
@@ -132,4 +148,30 @@ body {
 
 .campo-nome {
     margin-right: 200px;
+}
+
+
+/*-Parte Cadastro-*/
+
+.invisivel{
+    display:none;
+    color:red
+}
+.cor-vermelha{
+    color:red;
+}
+.invisivel-complemento{
+    display: none;
+}
+#senha-mesma-valido{
+    color: red; 
+}
+/*Remover Setas do type="number"  (-moz-appearance) - é utilizada para exibir um elemento usando o estilo nativo da plataforma com base no tema do sistema operacional.
+#validationCustom06::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+*/
+/*Contato*/
+.card-img-top{
+    border-radius: 50%;
 }

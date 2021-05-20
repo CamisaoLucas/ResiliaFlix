@@ -1,0 +1,170 @@
+body {
+    background: url(../img/img-background.jpg);
+    color: #E1E1E6;
+}
+
+.navbar {
+    background-color: #000;
+    height: 80px;
+}
+
+#resilia, #flix {
+    font-size: 1.5em;
+    letter-spacing: 2px;
+}
+
+#resilia {
+    color: #6709ff;
+    margin-left: 50px;
+    border-bottom: 2px solid #5106c9;
+    border-top: 2px solid #5106c9;
+    border-left: 2px solid #5106c9;
+    padding-left: 5px;
+    
+}
+
+#flix {
+    color: #E1E1E6;
+    border-bottom: 2px solid #E1E1E6;
+    border-top: 2px solid #E1E1E6;
+    border-right: 2px solid #E1E1E6;
+    padding-right: 5px;
+}
+
+.entrar {
+    border: 1px solid #5106c9;
+    border-radius: 10px;
+    width: 100px;
+    text-align: center;
+    transition: background .5s;
+}
+.filmes{
+    border: 1px solid #5106c9;
+    border-radius: 10px;
+    width: 100px;
+    text-align: center;
+    transition: background .5s;
+    margin-right: 10px;
+}
+
+.entrar:hover {
+    border: 1px solid #E1E1E6;
+    background: #5106c9;
+    color: #b3b3b6; 
+}
+
+.cadastro {
+    background-color: #5106c9;
+    border-radius: 10px;
+    width: 150px;
+    text-align: center;
+    transition: background 1s;
+}
+
+.cadastro:hover {
+    background-color: #40079b;  
+    color: #b3b3b6;   
+}
+
+#cadastro {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.titulo-form-login, .titulo-form-cadastro {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.container-form, .container-recForm, .container-logForm {
+    margin: auto;
+    margin-top: 30px;
+    max-width: 500px;
+}
+
+#formulario {
+    margin: auto;
+    margin-top: 30px;
+    max-width: 1000px;
+}
+
+.nome-sobrenome {
+    display: flex;
+    gap: 1rem;
+}
+
+.container-recForm, .container-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#mudarSenha {
+    margin-top: -55px;
+    margin-bottom: 45px;
+}
+
+.input-style, .button-style {
+    width: 405px;
+}
+
+.texto-info-senha {
+    font-size: 14px;
+    max-width: 405px;
+    color: #672dc5;
+}
+
+.button-style {
+    background-color: #5106c9;
+    color: #E1E1E6;
+}
+
+.esqueceu-senha {
+    color: #672dc5;
+}
+
+.esqueceu-senha:hover {
+    color: #5106c9;
+}
+
+.f-text {
+    font-size: 12px;
+    color: #672dc5;
+}
+
+.button-login:hover {
+    background-color: #40079b;
+    color: #b3b3b6;    
+}
+
+.campo-nome {
+    margin-right: 200px;
+}
+#enviar-recSenha{
+    width: 200px;
+}
+
+/*Recuperação de senha*/
+.container-form{
+    background-color: #121214;
+    border-bottom: 3px solid #E1E1E6;
+    border-right: 3px solid #E1E1E6;
+    border-left: 3px solid #5106c9;
+    border-top: 3px solid #5106c9;
+    border-radius: 30px;
+    padding: 10px;
+}
+.erro-rec{
+    color: rgb(245, 33, 33);
+}
+.resp-recup{
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.img-respo{
+    width: 400px;
+    border-radius: 50%;
+}

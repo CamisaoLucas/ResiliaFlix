@@ -46,6 +46,22 @@ body #cadastro-concluido{
     padding-right: 5px;
 }
 
+.filmes-button {
+    border: 1px solid #5106c9;
+    border-radius: 10px;
+    width: 100px;
+    text-align: center;
+    transition: background .5s;
+    margin-right: 10px;
+}
+
+.filmes-button:hover {
+    background: #5106c9;
+    color: #b3b3b6; 
+
+    border: 1px solid #E1E1E6;
+}
+
 .entrar {
     border: 1px solid #5106c9;
     border-radius: 10px;

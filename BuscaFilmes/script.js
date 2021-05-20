@@ -22,45 +22,46 @@ $('.botao').click(function(event){
         //requesição de todos os filmes de acordo com a pesquisa.
         "url" : `http://www.omdbapi.com/?apikey=708a483d&S=${conversao}`,
         "success" : (req)=>{
-           let recebe = req.Search
+            console.log(req)
+            let recebe = req.Search
              console.log(recebe)
             //passa por dentro da array de filmes recebida.
             let contador = 0;
-            
-         try{
+            if(req.Response == 'False'){
+                $('#posicao-filmes').html('<h1 class="erro">FILME NÃO ENCONTRADO!</h1>')
+                throw new Error ("filme não encontrado")
+            }else
             for(let i = 0; i < recebe.length; i++){
-                //verifica se o o typo realmente é um filme
+        //verifica se o o typo realmente é um filme
             if(recebe[i].Type == 'movie'){   
                 contador++
                 let filmes = new Filmes(recebe[i]);
-                filmes.contador = contador  
-           }}
-           throw new Error('ERRO 404! FILME NÃO ENCONTRADO!')}
-           catch(error) {
-        
-            $(`#posicao-filmes`).html(`<h1 class="erro">ERRO 404! FILME NÃO ENCONTRADO!`)
-           }    
+                filmes.contador = contador
+                
+
+        $.ajax({
+            //requisiçao de todas(FULL) as informações de cada filme.
+            "url" : `http://www.omdbapi.com/?apikey=708a483d&t=${recebe[i].Title}&plot=full`,
+            "success" : (req)=>{
+                filmes.pegaInfo(req.Plot)
+
+             
+                },
             
-
-            $.ajax({
-                //requisiçao de todas(FULL) as informações de cada filme.
-                "url" : `http://www.omdbapi.com/?apikey=708a483d&t=${recebe[i].Title}&plot=full`,
-                "success" : (req)=>{
-                    filmes.pegaInfo(req.Plot, req.Genre, req.Runtime)
-
-                
-                    },
-                
-                'error':function(erro){
-                    
-                }
+            'error':function(erro){
+                $('#posicao-filmes').html('<h1>FILME NÃO ENCONTRADO!</h1>')
+            }
             });
-                    filmes.mostrarFilmes()
+                filmes.mostrarFilmes()
+            }}
+
+            
+            
         },
         'error':function(erro){
-            $('#posicao-filmes').html('<h1 class="erro">FILME NÃO ENCONTRADO!</h1>')
+       console.log('deu erro')      
         }
-    });
+      });
 });
 
 

@@ -33,7 +33,7 @@ $('.botao').click(function(event){
             }else
             for(let i = 0; i < recebe.length; i++){
         //verifica se o o typo realmente é um filme
-            if(recebe[i].Type == 'movie'){   
+            if(recebe[i].Type == 'movie' || recebe[i].Type == 'series'|| recebe[i].Type == 'documentary'){   
                 contador++
                 let filmes = new Filmes(recebe[i]);
                 filmes.contador = contador

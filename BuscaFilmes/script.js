@@ -11,7 +11,7 @@ function pegarId(){
         }
       });
 }
-
+if(location.search)
 pegarId()
 
 $('.botao').click(function(event){

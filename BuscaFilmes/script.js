@@ -23,7 +23,7 @@ $('.btn').click(function(event){
             //requisiçao de todas(FULL) as informações de cada filme.
             "url" : `http://www.omdbapi.com/?apikey=708a483d&t=${recebe[i].Title}&plot=full`,
             "success" : (req)=>{
-                filmes.pegaInfo(req.Plot)
+                filmes.pegaInfo(req.Plot, req.Genre, req.Runtime)
 
              
                 },
@@ -50,7 +50,7 @@ class Filmes{
         this.contador = 0;
         this.img = results.Poster;
         this.nome = results.Title;
-        this.descricao;
+        this.descricao = results.Plot;
         this.ano = results.Year;
         this.lancamento = results.Released;
         this.duracao = results.Runtime;
@@ -59,6 +59,13 @@ class Filmes{
 
     }
 
+     pegaInfo(descricao, genero, duracao){
+        this.descricao = descricao;
+        this.genero = genero;
+        this.duracao = duracao;
+    }    
+
+
     mostrarFilmes(){
         $(`#posicao-filmes`).html(`<div id="posicao-filmes"></div>`)
 
@@ -66,22 +73,23 @@ class Filmes{
             
              $(`#posicao-filmes`).append(`
            <div class="filmes">
-            <h1>${this.nome}</h1>
+            <h1 class='titulo'>${this.nome}</h1>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal${this.contador}"><img src = ${this.img}></button>
             
-            <div class="modal fade" id="exampleModal${this.contador}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade " id="exampleModal${this.contador}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1  class="modal-title" id="exampleModalLabel">${this.nome}</h1>
+                            <h1  class="modal-title titulo texto" id="exampleModalLabel">${this.nome}</h1>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
                             <img src = ${this.img}>
-                            <p>${this.descricao}</p>
-                            <p>${this.ano}</p></div></div>
+                            <p class='texto descricao'>${this.descricao}</p>
+                            <p class='texto'>${this.ano}</p><p>||</p><p class='texto'>${this.genero}</p><p>||</p><p class='texto'>${this.duracao}</p>
+                            </div></div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -94,9 +102,7 @@ class Filmes{
         }, 500);              
     }
 
-    pegaInfo(requesicao){
-        this.descricao = requesicao
-    }     
+   
 }
 
 

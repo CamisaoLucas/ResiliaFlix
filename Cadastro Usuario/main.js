@@ -9,7 +9,7 @@ let forms = document.querySelectorAll('.needs-validation')
         event.stopPropagation()
       } else {
         event.preventDefault()
-        cadastroFinalizado.addConstroler()
+        cadastroFinalizado.addConstroler() //pegar os dados
       }
       confirmaSenhaValida()
       form.classList.add('was-validated')
@@ -31,7 +31,7 @@ function confirmaSenhaValida() {
 $('#validationCustom07').on('blur', function () { //blur - pegar os dados quando ele acabar de digitar
   let validacaoCep = document.querySelector('#validationCustom07')
   $.ajax({
-    url: `http://viacep.com.br/ws/${$('#validationCustom07').val()}/json/`,
+    url: `https://viacep.com.br/ws/${$('#validationCustom07').val()}/json/`,
     'success': function (result) {
       validacaoCep.setCustomValidity('') //Valida CEP
       preencherAuto(result)
@@ -61,4 +61,14 @@ $('#validationCustom13').change(function(){
   }
 })
 
-const cadastroFinalizado = new ConstrollerAdd(); // pegar os dados.
+const cadastroFinalizado = new ConstrollerAdd; //criar "ativar a class Constroller"
+
+//Valida RG - com 8 caracteres
+let valida06 = document.querySelector('#validationCustom06')
+$('#validationCustom06').on('input',()=>{
+  if ($('#validationCustom06').val().length == 8) {
+    valida06.setCustomValidity('') //é valido
+  } else {
+    valida06.setCustomValidity('Não é valido') //não é valido
+  }
+})

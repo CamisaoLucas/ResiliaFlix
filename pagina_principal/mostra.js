@@ -19,7 +19,7 @@ for (let i = 0; i < arrId.length; i++) {
            // console.log(resultado.Actors)
              //exibir img 
             document.querySelector('#principal').innerHTML +=
-                `<a href="./BuscaFilmes/buscaFilmes.html?id=${arrId[i]}"><img src="${resultado.Poster}"></a> `
+                `<a href="./BuscaFilmes/buscaFilmes.html?id=${arrId[i]}"><img class="imgfilme" src="${resultado.Poster}"></a> `
     
           
         }

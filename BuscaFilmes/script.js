@@ -1,3 +1,19 @@
+function pegarId(){
+    const pegarNomeId = location.search.substr(4)//location é local onde está o site no momento.
+    $.ajax({
+        "url" : `http://www.omdbapi.com/?apikey=b1d50f7f&i=${pegarNomeId}&plot=full`, //s=${conversao} O s trás todas as informações de todos os filmes existente
+        "success" : function(result){
+            let filmes = new Filmes(result);
+            filmes.mostrarFilmes()
+            
+        },
+        'error':function(erro){
+        }
+      });
+}
+
+pegarId()
+
 $('.btn').click(function(event){
     event.preventDefault()
     let resposta = $('.resposta').val().split(" ")

@@ -7,7 +7,7 @@ $(document).ready(function () {
 for (let i = 0; i < arrId.length; i++) {
     //requisicao 
     $.ajax({
-        url: 'http://www.omdbapi.com/',
+        url: 'https://www.omdbapi.com/',
         //organizacao 
         'data': {
             'i': arrId[i],

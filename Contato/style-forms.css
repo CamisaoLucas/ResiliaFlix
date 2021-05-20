@@ -68,6 +68,11 @@ body #cadastro-concluido{
     background: #5106c9;
     color: #b3b3b6; 
 }
+.filmes:hover {
+    border: 1px solid #E1E1E6;
+    background: #5106c9;
+    color: #b3b3b6; 
+}
 
 .cadastro {
     background-color: #5106c9;

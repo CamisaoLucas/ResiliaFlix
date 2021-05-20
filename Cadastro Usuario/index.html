@@ -42,19 +42,19 @@
     <!--Formulário BootsTrap-->
     <section id="formulario">
       <form id="formulario-principal" class="col g-3 needs-validation" novalidate>
-        <h1>Cadastro: </h1>
+        <h1 class="mb-5">Faça seu cadastro </h1>
         <!--Nome-->
         <div class="row g-3 needs-validation">
           <div class="col-md-3">
             <label for="validationCustom01" class="form-label">Nome: </label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="nome" required>
+            <input type="text" class="form-control mb-3" id="validationCustom01" placeholder="nome" required>
             <div class="invalid-feedback">
               Colocar nome válido
             </div>
           </div>
           <!-- Sobre Nome-->
           <div class="col-md-4">
-            <label for="validationCustom02" class="form-label">Sobrenome: </label>
+            <label for="validationCustom02" class="form-label ">Sobrenome: </label>
             <input type="text" class="form-control" id="validationCustom02" placeholder="sobrenome" required>
             <div class="invalid-feedback">
               Colocar um Sobrenome
@@ -72,7 +72,7 @@
         <!--Senha-->
         <div class="row g-3 needs-validation">
           <div class="col-md-4 align-items-center">
-            <label for="validationCustom04" class="form-label">Senha: </label>
+            <label for="validationCustom04" class="form-label mt-3">Senha: </label>
             <input type="password" class="form-control" id="validationCustom04" placeholder="********"
               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required>
             <!--Regex password = pattern-->
@@ -87,7 +87,7 @@
           </div>
           <!--Confirmar senha-->
           <div class="col-md-4 align-items-center">
-            <label for="validationCustom05" class="form-label">Confirmar senha: </label>
+            <label for="validationCustom05" class="form-label mt-3">Confirmar senha: </label>
             <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" class="form-control"
               id="validationCustom05" placeholder="********" required>
             <div class="invalid-feedback">
@@ -97,7 +97,7 @@
         </div>
         <!-- RG-->
         <div class="col-md-3">
-          <label for="validationCustom06" class="form-label">RG: </label>
+          <label for="validationCustom06" class="form-label mt-2">RG: </label>
           <input type="text" class="form-control" id="validationCustom06" placeholder="00000000" required>
           <div class="invalid-feedback">
             RG inválido - (Colocar sem ponto ou traço)
@@ -105,7 +105,7 @@
         </div>
         <!--CEP-->
         <div class="col-md-2">
-          <label for="validationCustom07" class="form-label">CEP: </label>
+          <label for="validationCustom07" class="form-label mt-3">CEP: </label>
           <input type="text" class="form-control" id="validationCustom07" placeholder="00000-000" required>
           <div class="invalid-feedback">
             CEP inválido
@@ -114,7 +114,7 @@
         <!--Cidade-->
         <div class="row g-3 needs-validation">
           <div class="col-md-2">
-            <label for="validationCustom06" class="form-label">Cidade: </label>
+            <label for="validationCustom06" class="form-label mt-3">Cidade: </label>
             <input type="text" class="form-control" id="validationCustom08" placeholder="São Paulo" required>
             <div class="invalid-feedback">
               Cidade inválida
@@ -122,7 +122,7 @@
           </div>
           <!--UF-->
           <div class="col-md-2">
-            <label for="validationCustom06" class="form-label">Estado: </label>
+            <label for="validationCustom06" class="form-label mt-3">Estado: </label>
             <input type="text" class="form-control" id="validationCustom09" placeholder="SP" required>
             <div class="invalid-feedback">
               UF inválido
@@ -131,16 +131,16 @@
         </div>
         <!--Bairro-->
         <div class="col-md-4">
-          <label for="validationCustom06" class="form-label">Bairro: </label>
+          <label for="validationCustom06" class="form-label mt-3">Bairro: </label>
           <input type="text" class="form-control" id="validationCustom10" placeholder="Bairro" required>
           <div class="invalid-feedback">
             Bairro inválido
           </div>
         </div>
         <!--Rua-->
-        <div class="row g-3 needs-validation">
+        <div class="row g-3 needs-validation mb-4">
           <div class="col-md-5">
-            <label for="validationCustom06" class="form-label">Endereço: </label>
+            <label for="validationCustom06" class="form-label mt-4">Endereço: </label>
             <input type="text" class="form-control" id="validationCustom11" placeholder="Endereço" required>
             <div class="invalid-feedback">
               Endereço inválida
@@ -148,7 +148,7 @@
           </div>
           <!--Numero-->
           <div class="col-md-2">
-            <label for="validationCustom06" class="form-label">Numero: </label>
+            <label for="validationCustom06" class="form-label mt-4">Numero: </label>
             <input type="text" class="form-control" id="validationCustom12" placeholder="0000" required>
             <div class="invalid-feedback">
               Número inválido
@@ -169,7 +169,7 @@
           </div>
           <!--Sim-->
           <div id="reposta-change" class="col-md-2 invisivel-complemento">
-            <label for="validationCustom14" class="form-label">Complemento: </label>
+            <label for="validationCustom14" class="form-label mt-4">Complemento: </label>
             <input type="text" class="form-control" id="validationCustom14" placeholder="0000">
             <div class="invalid-feedback">
               Complemento inválido
@@ -191,7 +191,7 @@
         </div>
         <!--Botão Submit-->
         <div class="d-grid gap-2 col-6 mx-auto">
-          <button id="btn-enviar" class="btn btn-outline-primary" type="submit">Enviar</button>
+          <button id="btn-enviar" class="btn button-style mt-5 mb-3" type="submit">Enviar</button>
         </div>
       </form>
     </section>

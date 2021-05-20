@@ -135,6 +135,12 @@ body #cadastro-concluido{
     color: #E1E1E6;
 }
 
+.button-style:hover {
+    background-color: #40079b;
+    color: #b3b3b6;    
+}
+
+
 .esqueceu-senha {
     color: #672dc5;
 }

@@ -38,6 +38,14 @@ body {
     text-align: center;
     transition: background .5s;
 }
+.filmes{
+    border: 1px solid #5106c9;
+    border-radius: 10px;
+    width: 100px;
+    text-align: center;
+    transition: background .5s;
+    margin-right: 10px;
+}
 
 .entrar:hover {
     border: 1px solid #E1E1E6;

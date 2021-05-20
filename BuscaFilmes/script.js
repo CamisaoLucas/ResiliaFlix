@@ -1,4 +1,20 @@
-$('.btn').click(function(event){
+function pegarId(){
+    const pegarNomeId = location.search.substr(4)//location é local onde está o site no momento.
+    $.ajax({
+        "url" : `http://www.omdbapi.com/?apikey=b1d50f7f&i=${pegarNomeId}&plot=full`, //s=${conversao} O s trás todas as informações de todos os filmes existente
+        "success" : function(result){
+            let filmes = new Filmes(result);
+            filmes.mostrarFilmes()
+            
+        },
+        'error':function(erro){
+        }
+      });
+}
+
+pegarId()
+
+$('.botao').click(function(event){
     event.preventDefault()
     let resposta = $('.resposta').val().split(" ")
     let conversao = resposta.join(`+`)
@@ -6,42 +22,45 @@ $('.btn').click(function(event){
         //requesição de todos os filmes de acordo com a pesquisa.
         "url" : `http://www.omdbapi.com/?apikey=708a483d&S=${conversao}`,
         "success" : (req)=>{
-            let recebe = req.Search
+           let recebe = req.Search
              console.log(recebe)
             //passa por dentro da array de filmes recebida.
             let contador = 0;
             
+         try{
             for(let i = 0; i < recebe.length; i++){
-        //verifica se o o typo realmente é um filme
+                //verifica se o o typo realmente é um filme
             if(recebe[i].Type == 'movie'){   
                 contador++
                 let filmes = new Filmes(recebe[i]);
-                filmes.contador = contador
+                filmes.contador = contador  
+           }}
+           throw new Error('ERRO 404! FILME NÃO ENCONTRADO!')}
+           catch(error) {
+        
+            $(`#posicao-filmes`).html(`<h1 class="erro">ERRO 404! FILME NÃO ENCONTRADO!`)
+           }    
+            
+
+            $.ajax({
+                //requisiçao de todas(FULL) as informações de cada filme.
+                "url" : `http://www.omdbapi.com/?apikey=708a483d&t=${recebe[i].Title}&plot=full`,
+                "success" : (req)=>{
+                    filmes.pegaInfo(req.Plot, req.Genre, req.Runtime)
+
                 
-
-        $.ajax({
-            //requisiçao de todas(FULL) as informações de cada filme.
-            "url" : `http://www.omdbapi.com/?apikey=708a483d&t=${recebe[i].Title}&plot=full`,
-            "success" : (req)=>{
-                filmes.pegaInfo(req.Plot, req.Genre, req.Runtime)
-
-             
-                },
-            
-            'error':function(erro){
-                $('#posicao-filmes').html('<h1>FILME NÃO ENCONTRADO!</h1>')
-            }
+                    },
+                
+                'error':function(erro){
+                    
+                }
             });
-                filmes.mostrarFilmes()
-            }}
-
-            
-            
+                    filmes.mostrarFilmes()
         },
         'error':function(erro){
-       console.log('deu erro')      
+            $('#posicao-filmes').html('<h1 class="erro">FILME NÃO ENCONTRADO!</h1>')
         }
-      });
+    });
 });
 
 
@@ -74,11 +93,11 @@ class Filmes{
              $(`#posicao-filmes`).append(`
            <div class="filmes">
             <h1 class='titulo'>${this.nome}</h1>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal${this.contador}"><img src = ${this.img}></button>
+            <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal${this.contador}"><img src = ${this.img}></button>
             
-            <div class="modal fade " id="exampleModal${this.contador}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="exampleModal${this.contador}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
-                    <div class="modal-content">
+                    <div id="modalTeste" class="modal-content ">
                         <div class="modal-header">
                             <h1  class="modal-title titulo texto" id="exampleModalLabel">${this.nome}</h1>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -90,9 +109,6 @@ class Filmes{
                             <p class='texto descricao'>${this.descricao}</p>
                             <p class='texto'>${this.ano}</p><p>||</p><p class='texto'>${this.genero}</p><p>||</p><p class='texto'>${this.duracao}</p>
                             </div></div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>

@@ -134,6 +134,7 @@ footer{
     width: 100px;
     text-align: center;
     transition: background .5s;
+    margin-right: 10px;
 }
 
 .entrar:hover {
@@ -148,6 +149,7 @@ footer{
     width: 150px;
     text-align: center;
     transition: background 1s;
+    margin-right: 10px;
 }
 
 .cadastro:hover {
@@ -155,10 +157,7 @@ footer{
     color: #b3b3b6;
 }
 
-#cadastro {
-    margin-left: 10px;
-    margin-right: 50px;
-}
+
 .fundoPreto{
     background-color: #121214;
 }

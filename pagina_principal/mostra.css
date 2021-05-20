@@ -92,3 +92,65 @@ footer{
     justify-content:center;
     margin: 18px;
 }
+
+.navbar {
+    background-color: #000;
+     height: 100px;
+}
+
+
+#resilia, #flix {
+    font-size: 3.0em;
+    letter-spacing: 2px;
+}
+
+#resilia {
+    color: #6709ff;
+    margin-left: 50px;
+    border-bottom: 2px solid #5106c9;
+    border-top: 2px solid #5106c9;
+    border-left: 2px solid #5106c9;
+    padding-left: 5px;
+
+}
+
+#flix {
+    color: #E1E1E6;
+    border-bottom: 2px solid #E1E1E6;
+    border-top: 2px solid #E1E1E6;
+    border-right: 2px solid #E1E1E6;
+    padding-right: 5px;
+}
+
+.entrar {
+    border: 1px solid #5106c9;
+    border-radius: 10px;
+    width: 100px;
+    text-align: center;
+    transition: background .5s;
+}
+
+.entrar:hover {
+    border: 1px solid #E1E1E6;
+    background: #5106c9;
+    color: #b3b3b6; 
+}
+
+.cadastro {
+    background-color: #5106c9;
+    border-radius: 10px;
+    width: 150px;
+    text-align: center;
+    transition: background 1s;
+}
+
+.cadastro:hover {
+    background-color: #40079b;
+    color: #b3b3b6;
+}
+
+
+.fundoPreto{
+    background-color: #121214;
+}
+

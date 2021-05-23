@@ -27,6 +27,31 @@ function confirmaSenhaValida() {
   })
 }
 
+//----Mostra senha
+$('#mostra-senha').on('click', (event)=>{
+  event.preventDefault()
+  if($('#validationCustom04').attr('type') == 'password'){
+    $('#validationCustom04').attr('type', 'text')
+    $('#mostra-senha').attr('src', './imgCadastro/olho-fechado.png')
+
+  }else if($('#validationCustom04').attr('type') == 'text'){
+    $('#validationCustom04').attr('type','password')
+    $('#mostra-senha').attr('src', './imgCadastro/olho-aberto.png')
+  }
+})
+//----Mostra confirmação de senha
+$('#mostra-confi-senha').on('click', (event)=>{
+  event.preventDefault()
+  if($('#validationCustom05').attr('type') == 'password'){
+    $('#validationCustom05').attr('type', 'text')
+    $('#mostra-confi-senha').attr('src', './imgCadastro/olho-fechado.png')
+
+  }else if($('#validationCustom05').attr('type') == 'text'){
+    $('#validationCustom05').attr('type','password')
+    $('#mostra-confi-senha').attr('src', './imgCadastro/olho-aberto.png')
+  }
+})
+
 //--------------------------validar CEP---------------------------------------
 $('#validationCustom07').on('blur', function () { //blur - pegar os dados quando ele acabar de digitar
   let validacaoCep = document.querySelector('#validationCustom07')
@@ -72,3 +97,4 @@ $('#validationCustom06').on('input',()=>{
     valida06.setCustomValidity('Não é valido') //não é valido
   }
 })
+

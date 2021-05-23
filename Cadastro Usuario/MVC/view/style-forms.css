@@ -136,6 +136,22 @@ body #cadastro-concluido{
     margin-bottom: 45px;
 }
 
+/*Icone de mudar senha*/
+.mostra-senha{
+    height: 35px;
+    width: 35px;
+    background: white;
+    border-radius: 48%;
+    box-shadow: -1px -1px 1px 3px rgb(0, 0, 0);
+}
+.btn-mostra{
+    margin-top: 50px;
+}
+.mostra-senha:active{
+    background: #5106c9;
+    box-shadow: -3px -3px 1px 3px rgb(20, 20, 20);
+}
+
 .input-style, .button-style {
     width: 405px;
 }
